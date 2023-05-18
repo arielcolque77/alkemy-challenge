@@ -50,7 +50,10 @@ function Login() {
             <h2>Alerta</h2>
             <p>Perfecto, ingresaste correctamente</p>
           </div>
-        );
+        )
+        const tokenRecibido = res.data.token;
+        localStorage.setItem("token", tokenRecibido);
+        localStorage.setItem("email", email);
         console.log(res.data);
       });
   };
