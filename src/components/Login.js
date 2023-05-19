@@ -1,5 +1,6 @@
 import axios from "axios";
-import swAlert from "@sweetalert/with-react";
+// import swAlert from "@sweetalert/with-react";
+import SweetAlert2 from "react-sweetalert2";
 
 function Login() {
   const submitHandler = (e) => {
@@ -12,7 +13,7 @@ function Login() {
     console.log(regexEmail.test(email));
 
     if (email === "" || password === "") {
-      swAlert(
+      SweetAlert2(
         <div>
           <h2>Alerta</h2>
           <p>Los campos no pueden estar vacios</p>
@@ -21,7 +22,7 @@ function Login() {
       return;
     }
     if (email !== "" && !regexEmail.test(email)) {
-      swAlert(
+      SweetAlert2(
         <div>
           <h2>Alerta</h2>
           <p>El correo es valido</p>
@@ -30,7 +31,7 @@ function Login() {
       return;
     }
     if (email !== "challenge@alkemy.org" || password !== "react") {
-      swAlert(
+      SweetAlert2(
         <div>
           <h2>Alerta</h2>
           <p>Credenciales invalidas</p>
@@ -45,7 +46,7 @@ function Login() {
         password,
       })
       .then((res) => {
-        swAlert(
+        SweetAlert2(
           <div>
             <h2>Alerta</h2>
             <p>Perfecto, ingresaste correctamente</p>
